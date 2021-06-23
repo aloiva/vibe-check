@@ -21,13 +21,14 @@ def main():
     print_welcome_message()
     while True:
         text = verified_input() 
+        if text == "exit":
+            break
         score = analyser(text)
         print("Happiness score is", score)
         wait()
         print_emoticon(score)
         animalyser(score)
-        if text == "exit":
-            break
+
 
 
 def analyser(text):
