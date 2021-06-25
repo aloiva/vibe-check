@@ -75,11 +75,12 @@ To cutomise the output emoticons, make changes to the `.txt` files present in `a
 - Enter an emoticon in a new line to add it.
 - Delete the line with emoticon to remove it.
 
-> Do not leave a blank line in any of the files, else there is a chance of getting a null output.
+   > Do not leave a blank line in any of the files, else there is a chance of getting a null output.
 
 ## Customise your output images
 
-1. To add or remove the images, make changes in the `assets/img/<pet>` folder where <pet> is to be replaced by any of the three pets mentioned - cats, hamsters and bunnies.
+1. To add or remove the images, upload or delete the .jpg files in the `assets/img/<pet>` folder where <pet> is to be replaced by any of the three pets mentioned - cats, hamsters and bunnies.
+   > Remember to rename the .jpg to an integer.jpg following the name of numerically last file in the folder.
 2. Change the value of respective constants in the source code to the present total number of images.
       Example:
       
@@ -99,6 +100,7 @@ To cutomise the output emoticons, make changes to the `.txt` files present in `a
 
 ## Acknowledgements
 The program is written as the final project for Code in Place and makes use the concept of conditional statements, loops, lists, dictionaries, images and file handling as taught by the course.
-Thank you Code in Place for the wonderful one month filled with learning. (*^▽^*)
+   
+Thank you Code in Place for the wonderful one month filled with learning. (\*^▽^\*)
 
 ###### © Pranava, 2021
