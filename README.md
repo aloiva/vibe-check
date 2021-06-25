@@ -1,5 +1,6 @@
 # Vibe Check
 
+## Getting Started
 This simple command line python program makes use of Natural Language ToolKit - nltk - to analyse the user input text and return on a scale of -1 to 1 the level of positivity or as stated by the program as "happiness score". The program then proceeds to print a random emoticon based on the happiness score from a set of five predefined levels - excited, happy, neutral, sad and melancholic. Based on the score, the user will either be asked to answer a few questions or proceeds to prompt for the next input. If the user is asked to answer a few questions based on pet preference, the program proceeds to display a picture of the certain pet chosen. User can enter `exit` any time of prompt to terminate the program.
 
 
