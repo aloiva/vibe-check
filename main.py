@@ -40,6 +40,9 @@ def analyser(text):
 
 
 def print_emoticon(score):
+    '''
+    This function prints a random emoticon from the file received as parameter
+    '''
     filename = "assets/emoticons/" + get_scale(score)
     print("Emoticon that (hopefully) represents the mood is  ", random_line_from(filename))
     wait()
@@ -47,7 +50,7 @@ def print_emoticon(score):
 
 def random_line_from(filename):
     '''
-    this function makes a list of all the lines and returns a random choice from the list
+    This function makes a list of all the lines in the file and returns a random choice from the list
     '''
     with open(filename, encoding="utf8") as f:
         lines = [line.rstrip("\n") for line in f]
@@ -55,6 +58,9 @@ def random_line_from(filename):
 
 
 def get_scale(score):
+    '''
+    Based the level of "happiness" based on score, the function returns the filename as a constant.
+    '''
     if score >= 0.5:
         return HAPPIER
     elif score < 0.5 and score > 0:
@@ -68,7 +74,10 @@ def get_scale(score):
 
 
 def animalyser(score):
-    if score<0:
+    '''
+    This function takes input after a few questions and passes the folder name to imgprnt() function to open the image file
+    '''
+    if score<=0:
         print("Time for a few questions now.")
         print("Do you like cats?")
         ans = yes_or_no()
@@ -80,18 +89,21 @@ def animalyser(score):
             if ans in YES:
                 imgprnt("hamsters")
             elif ans in NO:
-                print("Good gracious! At least bunnies? ")
+                print("Good gracious! At least bunnies?")
                 ans=yes_or_no()
                 if ans in YES:
                     imgprnt("bunnies")
                 elif ans in NO:
-                    print("The first person to ever not like any of the three cutest animal ever, have a nice day ahead.")
+                    print("You must be the first person ever to not like any of the three cutest pets ever.\nHope you have a day which will bring your happiness score to positive levels.")
 
     if score>0:
         print("Positive happiness score is a positive sign in life, keep up the good mood!")
 
 
 def imgprnt(key):
+    '''
+    This function opens a random image from the folder assets/img/<key>
+    '''
     filename = "assets/img/" + key + "/"
     rand.seed(time.time())
     if key == "cats":
@@ -106,6 +118,9 @@ def imgprnt(key):
 
 
 def print_welcome_message():
+    '''
+    This function prints the welcome message
+    '''
     print("Welcome to Vibe Check!!!")
     wait()
     print("The program takes input from you (the user!) and analyse the mood of the text.")
@@ -116,6 +131,9 @@ def print_welcome_message():
 
 
 def verified_input():
+    '''
+    This function keeps prompting the user until the input is a non null statement and returns the string
+    '''
     text=input("txt > ")
     while(text.strip()==""):
         text = input("txt > ")
@@ -123,12 +141,22 @@ def verified_input():
 
 
 def yes_or_no():
+    '''
+    This function keeps prompting the user for input until a valid input present in the constant lists 'YES' and 'NO' is entered.
+    '''
     ans = input("> ")
+    if ans == "exit":
+        exit()
     while ans.lower() not in YES and ans.lower() not in NO:
         ans = input("> ")
+        if ans== "exit":
+            exit()
     return ans.lower()
 
 def wait():
+    '''
+    The program waits for 2 seconds when wait() is called.
+    '''
     time.sleep(2)
 
 
